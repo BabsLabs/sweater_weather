@@ -48,6 +48,8 @@ group :development, :test do
   gem 'faker'
   gem 'pry'
   gem 'shoulda-matchers'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do
