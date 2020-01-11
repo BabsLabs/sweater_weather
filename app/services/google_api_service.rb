@@ -15,7 +15,7 @@ class GoogleAPIService
     parsed_response[:results].first[:geometry][:location]
   end
 
-  # private
+  private
 
   def conn
     Faraday.new(url: 'https://maps.googleapis.com') do |f|
