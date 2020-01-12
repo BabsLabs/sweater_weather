@@ -20,6 +20,7 @@ describe EightHourForecast do
     expect(eight_hour_forecast.eight_hour_weather.count).to eq(8)
     expect(eight_hour_forecast.eight_hour_weather[0]).to be_a Hash
     expect(eight_hour_forecast.eight_hour_weather[0]).to have_key :time
+    expect(eight_hour_forecast.eight_hour_weather[0]).to have_key :temperature
     expect(eight_hour_forecast.eight_hour_weather[0]).to_not have_key :cloudCover
   end
 end
