@@ -12,6 +12,6 @@ describe GoogleAPIService do
     location = 'denver, co'
     google_api_service = GoogleAPIService.new(location)
 
-    expect(google_api_service.get_latitude_and_longitude).to eq({:lat=>39.7392358, :lng=>-104.990251})
+    expect(google_api_service.latitude_and_longitude).to eq({:lat=>39.7392358, :lng=>-104.990251})
   end
 end
