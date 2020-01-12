@@ -3,10 +3,10 @@ class CurrentWeather
               :current_weather_icon,
               :current_weather_summary,
               :todays_high,
-              :todays_low, 
-              :feels_like, 
-              :humidity, 
-              :visibility, 
+              :todays_low,
+              :feels_like,
+              :humidity,
+              :visibility,
               :uv_index
 
   def initialize(forecast_info)
