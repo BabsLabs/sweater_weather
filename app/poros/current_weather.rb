@@ -1,5 +1,13 @@
 class CurrentWeather
-  attr_reader :current_temperature, :current_weather_icon, :current_weather_summary, :todays_high, :todays_low, :feels_like, :humidity, :visibility, :uv_index
+  attr_reader :current_temperature,
+              :current_weather_icon,
+              :current_weather_summary,
+              :todays_high,
+              :todays_low, 
+              :feels_like, 
+              :humidity, 
+              :visibility, 
+              :uv_index
 
   def initialize(forecast_info)
     @current_temperature = forecast_info[:currently][:temperature].to_i
