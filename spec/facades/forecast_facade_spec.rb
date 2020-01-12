@@ -9,6 +9,4 @@ describe ForecastFacade do
 
     expect(forecast).to be_a ForecastFacade
   end
-
-
 end
