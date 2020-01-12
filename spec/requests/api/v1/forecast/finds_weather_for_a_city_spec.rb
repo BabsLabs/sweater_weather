@@ -1,19 +1,18 @@
 require 'rails_helper'
 
-describe "Forecast API Endpoints" do
-  describe "it finds the weather for a city" do
-    it " pulls out the city and state from the get request and send it to Googles Geocoding API", :vcr do
+describe 'Forecast API Endpoints' do
+  describe 'it finds the weather for a city' do
+    it ' gets the wather for a given location' do
 
-      WebMock.enable_net_connect!
-      VCR.eject_cassette
-      VCR.turn_off!(ignore_cassettes: true)
+      search_location = 'denver,co'
 
-      city = "denver"
-      state = "co"
-
-      get "/api/v1/forecast?location=#{city},#{state}"
+      get "/api/v1/forecast?location=#{search_location}"
 
       expect(response).to be_successful
+
+      expect(response.body).to eq({'data':'stuff'})
     end
   end
+
+
 end
