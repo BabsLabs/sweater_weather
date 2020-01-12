@@ -1,11 +1,11 @@
 class Api::V1::ForecastController < ApplicationController
 
   def index
-    latitude_and_longitude = GoogleAPIService.new(params[:location])
+    location = GoogleAPIService.new(params[:location])
 
-    forecast_results = DarkSkyAPIService.new(latitude_and_longitude)
+    forecast_results = DarkSkyAPIService.new(location.latitude_and_longitude)
 
-    forecast_facade = ForecastFacade.new(forecast_results)
+    forecast_facade = ForecastFacade.new(forecast_results.forecast_info)
 
   end
 
