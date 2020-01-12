@@ -5,7 +5,7 @@ class Api::V1::ForecastController < ApplicationController
 
     forecast_results = DarkSkyAPIService.new(latitude_and_longitude)
 
-    forecast = ForecastFacade.new(forecast_results)
+    forecast_facade = ForecastFacade.new(forecast_results)
 
   end
 
