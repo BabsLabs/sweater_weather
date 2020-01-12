@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe DarkSkyAPIService do
-  it 'makes a Dark Sky API Service' do
+  it 'makes a Dark Sky API Service', :vcr do
     latitude_and_longitude = {:lat=>39.7392358, :lng=>-104.990251}
 
     dark_sky_api_service = DarkSkyAPIService.new(latitude_and_longitude)
