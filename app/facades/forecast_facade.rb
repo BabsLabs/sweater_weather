@@ -9,16 +9,16 @@ class ForecastFacade
 
   private
 
-  def current_info(forecast_info)
-    CurrentWeather.new(forecast_info)
-  end
+    def current_info(forecast_info)
+      CurrentWeather.new(forecast_info)
+    end
 
-  def eight_hour_info(forecast_info)
-    EightHourForecast.new(forecast_info)
-  end
+    def eight_hour_info(forecast_info)
+      EightHourForecast.new(forecast_info)
+    end
 
-  def five_day_info(forecast_info)
-    FiveDayForecast.new(forecast_info)
-  end
+    def five_day_info(forecast_info)
+      FiveDayForecast.new(forecast_info)
+    end
 
 end
