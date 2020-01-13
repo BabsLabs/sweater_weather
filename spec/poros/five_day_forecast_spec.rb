@@ -20,7 +20,6 @@ describe FiveDayForecast do
     expect(five_day_forecast.five_day_weather.count).to eq(5)
     expect(five_day_forecast.five_day_weather[0]).to be_a Hash
     expect(five_day_forecast.five_day_weather[0]).to have_key :time
-    expect(five_day_forecast.five_day_weather[0]).to have_key :summary
     expect(five_day_forecast.five_day_weather[0]).to have_key :icon
     expect(five_day_forecast.five_day_weather[0]).to have_key :temperatureHigh
     expect(five_day_forecast.five_day_weather[0]).to have_key :temperatureLow
