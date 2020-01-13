@@ -8,6 +8,7 @@ describe DarkSkyAPIService do
 
     expect(dark_sky_api_service).to be_a DarkSkyAPIService
   end
+  
   it "can return the forecast for the given latitude and longitude", :vcr do
     latitude_and_longitude = {:lat=>39.7392358, :lng=>-104.990251}
 
