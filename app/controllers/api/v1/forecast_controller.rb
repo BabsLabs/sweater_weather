@@ -1,12 +1,10 @@
 class Api::V1::ForecastController < ApplicationController
 
   def index
-    location = GoogleAPIService.new(params[:location])
+    weather_facade = WeatherFacade.new(params[:location])
+    # serialized_weather = WeatherFacadeSerializer.new(weather_facade)
 
-    forecast_results = DarkSkyAPIService.new(location.latitude_and_longitude)
-
-    forecast_facade = ForecastFacade.new(forecast_results.forecast_info)
-
+    render json: weather_facade
   end
 
 end
