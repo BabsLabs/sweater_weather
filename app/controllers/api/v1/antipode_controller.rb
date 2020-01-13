@@ -15,10 +15,9 @@ class Api::V1::AntipodeController < ApplicationController
 
     forecast_results = DarkSkyAPIService.new(antipode_info_for_google_reverse_lookup)
 
-    antipode_forecast_facade = AntipodeForecastFacade.new(forecast_results)
+    antipode_forecast_facade = AntipodeWeatherFacade.new(forecast_results.forecast_info)
 
-binding.pry
-
+    binding.pry
   end
 
 end
