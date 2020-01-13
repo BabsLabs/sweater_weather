@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
         get '/forecast', to: 'forecast#index'
 
+        get '/antipode', to: 'antipode#show'
+
     end
   end
 end
