@@ -8,17 +8,11 @@ class EightHourForecast
   private
 
     def eight_hour_info(forecast_info)
-      array = []
-      forecast_info[:hourly][:data].each do |data|
-        if data[:time] >= forecast_info[:currently][:time]
-          array << cleaner(data)
-        end
-      end
-      array.take(8)
+      (forecast_info[:hourly][:data].map { |d| cleaner(d) }).take(8)
     end
 
     def cleaner(weather_data)
       weather_data.select {|k,v| [:time, :temperature].include?(k) }
     end
-    
+
 end
