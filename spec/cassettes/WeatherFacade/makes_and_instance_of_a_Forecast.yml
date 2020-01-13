@@ -2,6 +2,116 @@
 http_interactions:
 - request:
     method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=denver,co&key=<GOOGLE_GEOCODE_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 13 Jan 2020 01:30:06 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=271
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443";
+        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
+        ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Denver",
+                       "short_name" : "Denver",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Denver County",
+                       "short_name" : "Denver County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Colorado",
+                       "short_name" : "CO",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Denver, CO, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 39.91424689999999,
+                          "lng" : -104.6002959
+                       },
+                       "southwest" : {
+                          "lat" : 39.614431,
+                          "lng" : -105.109927
+                       }
+                    },
+                    "location" : {
+                       "lat" : 39.7392358,
+                       "lng" : -104.990251
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.91424689999999,
+                          "lng" : -104.6002959
+                       },
+                       "southwest" : {
+                          "lat" : 39.614431,
+                          "lng" : -105.109927
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJzxcfI6qAa4cR1jaKJ_j0jhE",
+                 "types" : [ "locality", "political" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Mon, 13 Jan 2020 01:30:07 GMT
+- request:
+    method: get
     uri: https://api.darksky.net/forecast/<DARK_SKY_API_KEY>/39.7392358,-104.990251?exclude=minutely,flags&units=us
     body:
       encoding: US-ASCII
@@ -19,7 +129,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 13 Jan 2020 01:30:08 GMT
+      - Mon, 13 Jan 2020 01:30:07 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -27,20 +137,20 @@ http_interactions:
       Connection:
       - keep-alive
       X-Authentication-Time:
-      - 595ms
+      - 336ms
       X-Forecast-Api-Calls:
-      - '7'
+      - '5'
       Cache-Control:
       - max-age=60
       Expires:
-      - Mon, 13 Jan 2020 01:31:08 +0000
+      - Mon, 13 Jan 2020 01:31:07 +0000
       X-Response-Time:
-      - 127.638ms
+      - 175.842ms
       Vary:
       - Accept-Encoding
     body:
       encoding: ASCII-8BIT
-      string: '{"latitude":39.7392358,"longitude":-104.990251,"timezone":"America/Denver","currently":{"time":1578879008,"summary":"Partly
+      string: '{"latitude":39.7392358,"longitude":-104.990251,"timezone":"America/Denver","currently":{"time":1578879007,"summary":"Partly
         Cloudy","icon":"partly-cloudy-night","nearestStormDistance":10,"nearestStormBearing":270,"precipIntensity":0,"precipProbability":0,"temperature":38.29,"apparentTemperature":34.87,"dewPoint":0.86,"humidity":0.2,"pressure":1014.8,"windSpeed":4.52,"windGust":5.6,"windBearing":214,"cloudCover":0.42,"uvIndex":0,"visibility":10,"ozone":392.1},"hourly":{"summary":"Clear
         throughout the day.","icon":"clear-day","data":[{"time":1578877200,"summary":"Partly
         Cloudy","icon":"partly-cloudy-night","precipIntensity":0.0022,"precipProbability":0.01,"precipType":"snow","precipAccumulation":0.0089,"temperature":39.55,"apparentTemperature":36.04,"dewPoint":0.77,"humidity":0.19,"pressure":1014.2,"windSpeed":4.87,"windGust":6.84,"windBearing":194,"cloudCover":0.52,"uvIndex":0,"visibility":10,"ozone":392},{"time":1578880800,"summary":"Partly
@@ -64,5 +174,5 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Mon, 13 Jan 2020 01:30:08 GMT
+  recorded_at: Mon, 13 Jan 2020 01:30:07 GMT
 recorded_with: VCR 5.0.0
