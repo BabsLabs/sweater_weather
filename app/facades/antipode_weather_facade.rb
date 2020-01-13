@@ -9,7 +9,10 @@ class AntipodeWeatherFacade
 
     def format_forecast_info(forecast_info)
       current_info = forecast_info[:currently]
-      current_info.slice(:summary, :temperature)
+      sliced_forecast = current_info.slice(:summary, :temperature)
+      sliced_forecast[:current_temperature] = sliced_forecast[:temperature]
+      sliced_forecast.delete(:temperature)
+      sliced_forecast
     end
 
 end

@@ -3,7 +3,7 @@ class DarkSkyAPIService
 
   def initialize(latitude_and_longitude)
     @latitude = latitude_and_longitude[:lat]
-    @longitude = latitude_and_longitude[:lng]
+    @longitude = latitude_and_longitude[:lng] || latitude_and_longitude[:long]
     @forecast_info = get_forecast
   end
 

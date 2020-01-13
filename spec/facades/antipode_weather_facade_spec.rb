@@ -8,5 +8,8 @@ describe AntipodeWeatherFacade do
     weather = AntipodeWeatherFacade.new(json)
 
     expect(weather).to be_a AntipodeWeatherFacade
+    expect(weather.current_weather).to have_key(:summary)
+    expect(weather.current_weather).to have_key(:current_temperature)
+    expect(weather.current_weather).to_not have_key(:temperature)
   end
 end
