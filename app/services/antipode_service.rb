@@ -1,16 +1,9 @@
 class AntipodeService
-  attr_reader :antipode_info
 
-  def initialize(latitude_and_longitude)
-    @latitude = latitude_and_longitude[:lat]
-    @longitude = latitude_and_longitude[:lng]
-    @antipode_info = get_antipode
-  end
-
-  def get_antipode
+  def get_antipode(latitude_and_longitude)
     response = conn.get("antipodes") do |req|
-      req.params['lat'] = @latitude
-      req.params['long'] = @longitude
+      req.params['lat'] = latitude_and_longitude[:lat]
+      req.params['long'] = latitude_and_longitude[:lng]
     end
 
     JSON.parse(response.body, symbolize_names: true)
