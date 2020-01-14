@@ -17,9 +17,13 @@ class WeatherFacade
 
       location_lat_and_long = google_service.get_latitude_and_longitude(location)
 
-      forecast_results = DarkSkyAPIService.new(location_lat_and_long)
+      lat_and_long_for_darksky = location_lat_and_long[:results][0][:geometry][:location]
 
-      ForecastFacade.new(forecast_results.forecast_info)
+      dark_sky_service = DarkSkyAPIService.new(lat_and_long_for_darksky)
+
+      forecast = dark_sky_service.get_forecast
+
+      ForecastFacade.new(forecast)
     end
 
 end
