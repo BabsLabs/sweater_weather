@@ -6,12 +6,12 @@ class Api::V1::UsersController < ApplicationController
       serialized_user = UserSerializer.new(user)
       render json: serialized_user
     else
-      render json: {status: "error", code: 400, message: user.errors.full_messages.to_sentence}
+      render json: {message: user.errors.full_messages.to_sentence}, status: 400
     end
   end
 
   private
     def user_params
-      params.permit(:email, :password)
+      params.permit(:email, :password, :password_confirmation)
     end
 end
