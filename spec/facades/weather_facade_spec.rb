@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe WeatherFacade do
-  it 'makes and instance of a Forecast', :vcr do
+  it 'makes and instance of a WeatherFacade', :vcr do
 
     location = 'denver,co'
 
