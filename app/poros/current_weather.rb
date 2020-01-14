@@ -28,7 +28,7 @@ class CurrentWeather
     @today_summary = forecast_info[:daily][:data][0][:summary]
     @tonight_summary = get_tonights_summary(forecast_info)
   end
-  #
+
   private
 
     def get_tonights_summary(forecast_info)

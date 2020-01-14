@@ -8,11 +8,10 @@ class EightHourForecast
   private
 
     def eight_hour_info(forecast_info)
-      (forecast_info[:hourly][:data].map { |d| cleaner(d) }).take(8)
-    end
-
-    def cleaner(weather_data)
-      weather_data.select {|k,v| [:time, :temperature].include?(k) }
+      forecast_info[:hourly][:data].map do |day|
+        day[:time] = Time.at(day[:time]).to_datetime
+        day.slice(:time, :temperature)
+      end.take(8)
     end
 
 end

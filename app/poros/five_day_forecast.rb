@@ -14,6 +14,7 @@ class FiveDayForecast
 
     def cleaner(weather_data)
       weather_data.map do |one_day_of_data|
+        one_day_of_data[:time] = Time.at(one_day_of_data[:time]).to_datetime
         one_day_of_data.slice(:time, :icon, :temperatureHigh, :temperatureLow, :precipProbability)
       end
     end
