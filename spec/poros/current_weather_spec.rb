@@ -27,6 +27,6 @@ describe CurrentWeather do
     expect(current_weather.visibility).to eq(10.00)
     expect(current_weather.uv_index).to eq(0)
     expect(current_weather.today_summary).to eq("Clear throughout the day.")
-    # expect(current_weather.tonights_summary).to eq(0)
+    expect(current_weather.tonight_summary).to eq("Partly Cloudy")
   end
 end

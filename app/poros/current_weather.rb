@@ -9,8 +9,8 @@ class CurrentWeather
               :humidity,
               :visibility,
               :uv_index,
-              :today_summary
-              # :tonight_summary
+              :today_summary,
+              :tonight_summary
 
   def initialize(forecast_info)
     @current_time = forecast_info[:currently][:time]
@@ -24,13 +24,13 @@ class CurrentWeather
     @visibility = forecast_info[:currently][:visibility]
     @uv_index = forecast_info[:currently][:uvIndex].to_i
     @today_summary = forecast_info[:daily][:data][0][:summary]
-    # @tonight_summary = get_tonights_summary(forecast_info)
+    @tonight_summary = get_tonights_summary(forecast_info)
   end
   #
-  # private
-  #
-  #   def get_tonights_summary(forecast_info)
-  #     forecast_info[:daily][:data][0][:time]
-  #   end
+  private
+
+    def get_tonights_summary(forecast_info)
+      forecast_info[:hourly][:data].select {|day| day[:icon].include?("night") }.first[:summary]
+    end
 
 end
