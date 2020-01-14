@@ -13,5 +13,15 @@ describe 'Users API Endpoints' do
       parsed_response = JSON.parse(response.body, symbolize_names: true)
       expect(parsed_response[:data][:attributes][:api_key]).to eq(User.last.api_key)
     end
+
+    it 'returns shows an error if something was not provided', :vcr do
+      post "/api/v1/users", params: {email: 'email@email.com', password: 'password', password_confirmation: 'password_confirmation'}
+      post "/api/v1/users", params: {email: 'email@email.com', password: 'password', password_confirmation: 'password_confirmation'}
+
+      expect(response).to be_successful
+
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+      expect(parsed_response).to eq({:status=>"error", :code=>400, :message=>"Email has already been taken"})
+    end
   end
 end

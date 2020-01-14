@@ -16,7 +16,7 @@ describe CurrentWeather do
 
     current_weather = CurrentWeather.new(parsed_weather)
 
-    expect(current_weather.current_time).to eq(1578807070)
+    expect(current_weather.current_time).to eq('Sat, 11 Jan 2020 22:31:10.000000000 -0700')
     expect(current_weather.current_temperature).to eq(35)
     expect(current_weather.current_weather_icon).to eq('partly-cloudy-night')
     expect(current_weather.current_weather_summary).to eq('Partly Cloudy')
