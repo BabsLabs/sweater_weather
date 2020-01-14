@@ -12,9 +12,12 @@ class WeatherFacade
   private
 
     def get_weather_information(location)
-      location_lat_and_long = GoogleAPIService.new(location)
+      # location_lat_and_long = GoogleAPIService.new(location)
+      google_service = GoogleAPIService.new
 
-      forecast_results = DarkSkyAPIService.new(location_lat_and_long.latitude_and_longitude)
+      location_lat_and_long = google_service.get_latitude_and_longitude(location)
+
+      forecast_results = DarkSkyAPIService.new(location_lat_and_long)
 
       ForecastFacade.new(forecast_results.forecast_info)
     end
