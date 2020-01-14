@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Sessions API Endpoints' do
+describe 'Sessions Endpoint' do
   describe 'for a given user' do
     it 'returns the api key in a session when a user logs in', :vcr do
       user = User.create(email: 'email@email.com', password: 'password', password_confirmation: 'password')

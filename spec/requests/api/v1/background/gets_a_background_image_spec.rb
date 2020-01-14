@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Background API Endpoint' do
+describe 'Backgrounds  Endpoint' do
   describe 'for a given location' do
     it ' gets the weather forecast info for the front end', :vcr do
 
