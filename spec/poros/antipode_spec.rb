@@ -9,7 +9,7 @@ describe Antipode do
 
 
     antipode = Antipode.new(weather_json, antipode_info, search_location)
-    antipod_info = antipode.format_forecast_info(weather_json)
+    antipod_info = antipode.forecast
 
     expect(antipode).to be_an Antipode
     expect(antipod_info).to have_key(:summary)
