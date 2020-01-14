@@ -1,34 +1,34 @@
 require 'securerandom'
 
 class AntipodeFacade
-  attr_reader :get_info
 
-  def initialize(location)
-    @location = location
-    @get_info = format_info(location)
+  def self.get_antipode_info(location)
+    google_service = GoogleAPIService.new
+    google_service_results =  google_service.get_latitude_and_longitude(location)
+
+    #get just the needed lat and long from the google api results to pass into the AntipodeService
+    latitude_and_longitude_of_search_location = google_service_results[:results].first[:geometry][:location]
+
+    antipode_service = AntipodeService.new
+    #gets the antipode lat and long
+    antipode_response = antipode_service.get_antipode(latitude_and_longitude_of_search_location)
+
+    #gets the lat and long of the antipode location from the returned results
+    antipode_info_for_google_reverse_lookup = antipode_response[:data][:attributes]
+
+    #gets the data for the antipode
+    antipode_city_data = google_service.get_city_name(antipode_info_for_google_reverse_lookup)
+
+    antipode_name_info = antipode_city_data[:results][0][:address_components].map {|address_piece| address_piece[:long_name]}.flatten.join(' ')
+
+    darksky_service = DarkSkyAPIService.new(antipode_info_for_google_reverse_lookup)
+    #get forecast  from the darksky service
+    weather_data = darksky_service.get_forecast
+
+    # make an antipode object to be returned and serialized
+    antipode = Antipode.new(weather_data, antipode_name_info, location)
+
+    serialized_antipode = AntipodeSerializer.new(antipode)
   end
-
-    def format_info(location)
-      location = GoogleAPIService.new(location, nil)
-      antipode = AntipodeService.new(location.latitude_and_longitude)
-      antipode_info_for_google_reverse_lookup = antipode.antipode_info[:data][:attributes]
-      antipode_city_info = GoogleAPIService.new(nil , antipode_info_for_google_reverse_lookup)
-      # reassign the key returned from the antipode service to be reused in the darksky service
-      # break out into its own method or refactor in the final facade if there is time
-      # antipode_info_for_google_reverse_lookup[:lng] = antipode_info_for_google_reverse_lookup[:long]
-      forecast_results = DarkSkyAPIService.new(antipode_info_for_google_reverse_lookup)
-      antipode_weather_facade = AntipodeWeatherFacade.new(forecast_results.forecast_info)
-      # binding.pry
-
-      { "data": [
-        { "id": 1},
-        "type":"antipode",
-        "attributes": {
-          "location_name":"#{antipode_city_info.city_name_from_lat_and_long}",
-          "forecast": antipode_weather_facade.current_weather,
-           "search_location": "#{@location.capitalize}"
-        }
-        ]}
-    end
 
 end
