@@ -2,23 +2,28 @@ require 'rails_helper'
 
 describe GoogleAPIService do
   it 'makes and instance of a GoogleAPIService', :vcr do
-    location = 'denver, co'
-    google_api_service = GoogleAPIService.new(location)
+    google_api_service = GoogleAPIService.new
 
     expect(google_api_service).to be_a GoogleAPIService
   end
 
   it 'can get the latitude and longitude from a location', :vcr do
     location = 'denver, co'
-    google_api_service = GoogleAPIService.new(location)
+    google_api_service = GoogleAPIService.new
 
-    expect(google_api_service.latitude_and_longitude).to eq({:lat=>39.7392358, :lng=>-104.990251})
+    expect(google_api_service.get_latitude_and_longitude(location)).to have_key :results
+    expect(google_api_service.get_latitude_and_longitude(location)[:results]).to be_an Array
   end
 
   it 'can get the city name from a latitude and longitude', :vcr do
     lat_and_long = {:lat=>-22.3193039, :long=>-65.8306389}
-    google_api_service = GoogleAPIService.new(nil, lat_and_long)
+    google_api_service = GoogleAPIService.new
 
-    expect(google_api_service.city_name_from_lat_and_long).to eq("Yavi")
+    expect(google_api_service.get_city_name(lat_and_long)).to have_key(:results)
+    expect(google_api_service.get_city_name(lat_and_long)).to have_key(:plus_code)
+    expect(google_api_service.get_city_name(lat_and_long)[:results]).to be_an Array
+    expect(google_api_service.get_city_name(lat_and_long)[:results][0]).to have_key :address_components
+    expect(google_api_service.get_city_name(lat_and_long)[:results][0][:address_components]).to be_an Array
+    expect(google_api_service.get_city_name(lat_and_long)[:results][0][:address_components][0]).to have_key :long_name
   end
 end
