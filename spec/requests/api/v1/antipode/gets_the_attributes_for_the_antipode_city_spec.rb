@@ -9,10 +9,18 @@ describe 'Antipode API Endpoint' do
 
       expect(response).to be_successful
 
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+      expect(parsed_response).to have_key(:data)
+      expect(parsed_response[:data]).to have_key(:id)
+      expect(parsed_response[:data]).to have_key(:type)
+      expect(parsed_response[:data]).to have_key(:attributes)
+      expect(parsed_response[:data][:attributes]).to have_key(:id)
+      expect(parsed_response[:data][:attributes]).to have_key(:location_name)
+      expect(parsed_response[:data][:attributes]).to have_key(:forecast)
+      expect(parsed_response[:data][:attributes][:forecast]).to have_key(:summary)
+      expect(parsed_response[:data][:attributes][:forecast]).to have_key(:current_temperature)
+      expect(parsed_response[:data][:attributes]).to have_key(:search_location)
 
-      expected_response = File.read('spec/fixtures/antipode_response.json')
-
-      expect(response.body).to eq(expected_response)
     end
   end
 end
