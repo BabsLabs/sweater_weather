@@ -1,11 +1,4 @@
 class GoogleAPIService
-  attr_reader :latitude_and_longitude
-
-  def initialize(location)
-    @latitude_and_longitude = get_latitude_and_longitude(location)
-  end
-
-  private
 
     def get_latitude_and_longitude(location)
       response = conn.get('/maps/api/geocode/json') do |req|
@@ -17,6 +10,18 @@ class GoogleAPIService
       # returns the hash of latitude and longitude
       parsed_response[:results].first[:geometry][:location]
     end
+
+
+    def get_driving_directions(origin, destination)
+      response = conn.get('/maps/api/directions/json') do |req|
+        req.params['origin'] = origin
+        req.params['destination'] = destination
+      end
+
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+    end
+
+    private
 
     def conn
       Faraday.new(url: 'https://maps.googleapis.com') do |f|

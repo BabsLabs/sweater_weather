@@ -1,10 +1,8 @@
 class DarkSkyAPIService
-    attr_reader :forecast_info
 
   def initialize(latitude_and_longitude)
     @latitude = latitude_and_longitude[:lat]
     @longitude = latitude_and_longitude[:lng]
-    @forecast_info = get_forecast
   end
 
   def get_forecast
