@@ -16,6 +16,7 @@ describe CurrentWeather do
 
     current_weather = CurrentWeather.new(parsed_weather)
 
+    expect(current_weather.current_time).to eq(1578807070)
     expect(current_weather.current_temperature).to eq(35)
     expect(current_weather.current_weather_icon).to eq('partly-cloudy-night')
     expect(current_weather.current_weather_summary).to eq('Partly Cloudy')
@@ -25,5 +26,7 @@ describe CurrentWeather do
     expect(current_weather.humidity).to eq(0)
     expect(current_weather.visibility).to eq(10.00)
     expect(current_weather.uv_index).to eq(0)
+    expect(current_weather.today_summary).to eq("Clear throughout the day.")
+    expect(current_weather.tonight_summary).to eq("Partly Cloudy")
   end
 end
