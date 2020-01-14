@@ -1,11 +1,10 @@
 class Api::V1::AntipodeController < ApplicationController
 
   def show
-    antipode_facade = AntipodeFacade.new(params[:location])
+    antipode_facade = AntipodeFacade
+    antipode = antipode_facade.get_antipode_info(params[:location])
 
-    response = antipode_facade.get_info
-
-    response.to_json
+    render json: antipode
   end
 
 end
