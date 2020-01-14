@@ -1,7 +1,11 @@
 class Api::V1::UsersController < ApplicationController
 
   def create
-    user = User.create(request.headers[:email], request.headers[:password], request.headers[:password_confirmation])
+    user = User.create(user_params)
   end
 
+  private
+    def user_params
+      params.permit(:email, :password)
+    end
 end
