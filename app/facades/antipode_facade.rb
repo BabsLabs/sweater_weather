@@ -20,30 +20,25 @@ class AntipodeFacade
     end
 
     def self.get_latitude_and_longitude_from_google(location)
-      google_service = GoogleAPIService.new
-      google_service_results =  google_service.get_latitude_and_longitude(location)
+      google_service_results =  GoogleAPIService.get_latitude_and_longitude(location)
 
       #get just the needed lat and long from the google api results to pass into the AntipodeService
       google_service_results[:results].first[:geometry][:location]
     end
 
     def self.get_latitude_and_longitude_of_antipode(latitude_and_longitude_of_search_location)
-      antipode_service = AntipodeService.new
-      #gets the antipode lat and long
-      antipode_response = antipode_service.get_antipode(latitude_and_longitude_of_search_location)
+      antipode_response = AntipodeService.get_antipode(latitude_and_longitude_of_search_location)
 
       #gets the lat and long of the antipode location from the returned results
       antipode_response[:data][:attributes]
     end
 
     def self.get_city_info(antipode_info)
-      google_service = GoogleAPIService.new
-      google_service.get_city_name(antipode_info)
+      GoogleAPIService.get_city_name(antipode_info)
     end
 
     def self.get_forecast_from_darksky(antipode_info)
-      darksky_service = DarkSkyAPIService.new(antipode_info)
-      darksky_service.get_forecast
+      DarkSkyAPIService.get_forecast(antipode_info)
     end
 
 end

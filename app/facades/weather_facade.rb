@@ -12,8 +12,7 @@ class WeatherFacade
     private
 
     def self.get_search_location_data(location)
-      google_service = GoogleAPIService.new
-      google_service.get_latitude_and_longitude(location)
+      GoogleAPIService.get_latitude_and_longitude(location)
     end
 
     def self.get_location_lat_and_long_for_search_location(google_data_for_search_location)
@@ -21,8 +20,7 @@ class WeatherFacade
     end
 
     def self.get_forecast_info(lat_and_long_for_darksky)
-      dark_sky_service = DarkSkyAPIService.new(lat_and_long_for_darksky)
-      dark_sky_service.get_forecast
+      DarkSkyAPIService.get_forecast(lat_and_long_for_darksky)
     end
 
 end
