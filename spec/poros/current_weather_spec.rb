@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe CurrentWeather do
-  it 'makes and instance of a CurrentWeather' do
+  it 'makes and instance of a CurrentWeather', :vcr do
     weather_json = File.read('spec/fixtures/weather_response.json')
     parsed_weather = JSON.parse(weather_json, symbolize_names: true)
 
@@ -10,7 +10,7 @@ describe CurrentWeather do
     expect(forecast).to be_a CurrentWeather
   end
 
-  it 'can find the data for the weather summary section' do
+  it 'can find the data for the weather summary section', :vcr do
     weather_json = File.read('spec/fixtures/weather_response.json')
     parsed_weather = JSON.parse(weather_json, symbolize_names: true)
 
