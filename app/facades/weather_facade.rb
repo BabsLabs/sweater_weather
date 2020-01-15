@@ -2,28 +2,27 @@ require 'securerandom'
 
 class WeatherFacade
 
-  attr_reader :weather_information, :id
+    def self.get_weather_information(location)
+      google_data_for_search_location = get_search_location_data(location)
+      lat_and_long_for_darksky = get_location_lat_and_long_for_search_location(google_data_for_search_location)
+      forecast = get_forecast_info(lat_and_long_for_darksky)
+      Forecast.new(forecast)
+    end
 
-  def initialize(location)
-    @weather_information = get_weather_information(location)
-    @id = SecureRandom.hex(10).to_s
-  end
+    private
 
-  private
-
-    def get_weather_information(location)
-      # location_lat_and_long = GoogleAPIService.new(location)
+    def self.get_search_location_data(location)
       google_service = GoogleAPIService.new
+      google_service.get_latitude_and_longitude(location)
+    end
 
-      location_lat_and_long = google_service.get_latitude_and_longitude(location)
+    def self.get_location_lat_and_long_for_search_location(google_data_for_search_location)
+      google_data_for_search_location[:results][0][:geometry][:location]
+    end
 
-      lat_and_long_for_darksky = location_lat_and_long[:results][0][:geometry][:location]
-
+    def self.get_forecast_info(lat_and_long_for_darksky)
       dark_sky_service = DarkSkyAPIService.new(lat_and_long_for_darksky)
-
-      forecast = dark_sky_service.get_forecast
-
-      ForecastFacade.new(forecast)
+      dark_sky_service.get_forecast
     end
 
 end
