@@ -5,7 +5,6 @@ class Api::V1::RoadTripController < ApplicationController
     road_trip_facade = RoadTripFacade.new(road_trip_params)
     road_trip = road_trip_facade.make_road_trip
     serialized_trip = TripSerializer.new(road_trip)
-
     render json: serialized_trip
   end
 
