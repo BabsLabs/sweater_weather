@@ -15,7 +15,7 @@ class CurrentWeather
               :tonight_summary
 
   def initialize(forecast_info)
-    @current_time = Time.at(forecast_info[:currently][:time]).strftime("%Y-%b-%d %I:%M%p")
+    @current_time = Time.at(forecast_info[:currently][:time]).localtime.strftime("%Y-%b-%d %I:%M%p")
     @current_temperature = forecast_info[:currently][:temperature].to_i
     @current_weather_icon = forecast_info[:currently][:icon]
     @current_weather_summary = forecast_info[:currently][:summary]
