@@ -9,7 +9,7 @@ class EightHourForecast
 
     def eight_hour_info(forecast_info)
       forecast_info[:hourly][:data].map do |day|
-        day[:time] = Time.at(day[:time]).strftime("%Y-%b-%d %I:%M%p")
+        day[:time] = Time.at(day[:time]).localtime.strftime("%Y-%b-%d %I:%M%p")
         day.slice(:time, :temperature)
       end.take(8)
     end
