@@ -5,12 +5,8 @@ class GoogleAPIService
         req.params['address'] = location
       end
 
-      parsed_response = JSON.parse(response.body, symbolize_names: true)
-
-      # returns the hash of latitude and longitude
-      parsed_response[:results].first[:geometry][:location]
+      JSON.parse(response.body, symbolize_names: true)
     end
-
 
     def get_driving_directions(origin, destination)
       response = conn.get('/maps/api/directions/json') do |req|
@@ -21,12 +17,20 @@ class GoogleAPIService
       parsed_response = JSON.parse(response.body, symbolize_names: true)
     end
 
+    def get_city_name(lat_and_long)
+      response = conn.get('/maps/api/geocode/json') do |req|
+        req.params['latlng'] = "#{lat_and_long[:lat]}, #{lat_and_long[:long]}"
+      end
+
+      JSON.parse(response.body, symbolize_names: true)
+    end
+
     private
 
-    def conn
-      Faraday.new(url: 'https://maps.googleapis.com') do |f|
-        f.params['key'] = ENV['GOOGLE_GEOCODE_API_KEY']
-        f.adapter Faraday.default_adapter
+      def conn
+        Faraday.new(url: 'https://maps.googleapis.com') do |f|
+          f.params['key'] = ENV['GOOGLE_GEOCODE_API_KEY']
+          f.adapter Faraday.default_adapter
+        end
       end
-    end
 end
