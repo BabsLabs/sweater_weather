@@ -6,8 +6,7 @@ class Api::V1::ForecastController < ApplicationController
       serialized_forecast = ForecastSerializer.new(forecast)
       render json: serialized_forecast
     else
-      render json: {message: "There was an error with your search location"}, status: 400
+      render json: {message: "There was an error getting the forecast for your search location"}, status: 400
     end
   end
-
 end

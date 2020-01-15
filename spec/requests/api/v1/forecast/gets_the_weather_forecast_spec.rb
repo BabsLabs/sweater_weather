@@ -50,6 +50,6 @@ describe 'Forecast Endpoint' do
     get "/api/v1/forecast?location=#{search_location}"
 
     expect(response).to_not be_successful
-    expect(response.body).to eq("{\"message\":\"There was an error with your search location\"}")
+    expect(response.body).to eq("{\"message\":\"There was an error getting the forecast for your search location\"}")
   end
 end

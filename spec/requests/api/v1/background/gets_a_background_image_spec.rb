@@ -9,7 +9,15 @@ describe 'Backgrounds  Endpoint' do
       get "/api/v1/backgrounds?location=#{search_location}"
 
       expect(response).to be_successful
-      expect(response.body).to be_a String
+
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(parsed_response).to have_key :data
+      expect(parsed_response[:data]).to have_key :id
+      expect(parsed_response[:data]).to have_key :type
+      expect(parsed_response[:data]).to have_key :attributes
+      expect(parsed_response[:data][:attributes]).to have_key :id
+      expect(parsed_response[:data][:attributes]).to have_key :url
     end
   end
 end
