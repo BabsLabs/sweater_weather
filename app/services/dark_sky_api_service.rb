@@ -1,12 +1,7 @@
 class DarkSkyAPIService
 
-  def initialize(latitude_and_longitude)
-    @latitude = latitude_and_longitude[:lat]
-    @longitude = latitude_and_longitude[:lng]
-  end
-
-  def get_forecast
-    response = conn.get("/forecast/#{ENV['DARK_SKY_API_KEY']}/#{@latitude},#{@longitude}") do |req|
+  def self.get_forecast(latitude_and_longitude)
+    response = conn.get("/forecast/#{ENV['DARK_SKY_API_KEY']}/#{latitude_and_longitude[:lat]},#{latitude_and_longitude[:lng] || latitude_and_longitude[:long]}") do |req|
       req.params['exclude'] = 'minutely,flags'
       req.params['units'] = 'us'
     end
@@ -16,7 +11,9 @@ class DarkSkyAPIService
 
   private
 
-    def conn
+  attr_reader :latitude, :longitude
+
+    def self.conn
       Faraday.new(url: 'https://api.darksky.net') do |f|
         f.adapter Faraday.default_adapter
       end

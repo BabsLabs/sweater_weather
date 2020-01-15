@@ -9,6 +9,8 @@ Rails.application.routes.draw do
         post '/sessions', to: 'sessions#show'
         post '/road_trip', to: 'road_trip#show'
 
+        get '/antipode', to: 'antipode#show'
+
     end
   end
 end
