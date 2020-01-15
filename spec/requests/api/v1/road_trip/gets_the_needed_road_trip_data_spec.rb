@@ -21,7 +21,7 @@ describe 'RoadTrip Endpoint' do
       # expect(response).to have_http_status(401) THIS RETURNS A 401 BUT FAILS THE TEST FOR SOME REASON
 
       parsed_response = JSON.parse(response.body, symbolize_names: true)
-      expect(parsed_response).to eq({:message=>"There was an error with your api_key. Did you provide a correct api key?"})
+      expect(parsed_response).to eq({:message=>"There was an error with your api_key. Did you provide a valid api key?"})
     end
   end
 end

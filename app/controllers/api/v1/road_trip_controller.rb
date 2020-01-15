@@ -16,7 +16,7 @@ class Api::V1::RoadTripController < ApplicationController
 
     def validate
       if !params[:api_key] || !User.find_by(api_key: params[:api_key])
-        render json: {message: 'There was an error with your api_key. Did you provide a correct api key?'}, status: 401 and return
+        render json: {message: 'There was an error with your api_key. Did you provide a valid api key?'}, status: 401 and return
       end
     end
 end
