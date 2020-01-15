@@ -8,5 +8,4 @@ class Api::V1::SessionsController < ApplicationController
       render json: {message: 'Bad Credentials'}, status: 400
     end
   end
-
 end
