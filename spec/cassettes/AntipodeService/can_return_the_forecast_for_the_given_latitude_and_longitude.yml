@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Wed, 15 Jan 2020 15:31:23 GMT
+      - Wed, 15 Jan 2020 16:01:07 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -45,9 +45,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 74e87881-a21c-49e2-8ba4-8c6c84fbe418
+      - b404064a-8b2b-4cfc-9d3c-b82659463020
       X-Runtime:
-      - '0.002747'
+      - '0.002589'
       Transfer-Encoding:
       - chunked
       Via:
@@ -56,7 +56,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
     http_version: 
-  recorded_at: Wed, 15 Jan 2020 15:31:24 GMT
+  recorded_at: Wed, 15 Jan 2020 16:01:08 GMT
 - request:
     method: get
     uri: http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&long=114.1693611
@@ -80,7 +80,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Wed, 15 Jan 2020 15:31:23 GMT
+      - Wed, 15 Jan 2020 16:01:08 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -102,9 +102,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c0bc9418-46ea-453b-8801-48a1f12a9d05
+      - e2d5dca5-b921-4dd8-ba04-ad0062c098aa
       X-Runtime:
-      - '0.002527'
+      - '0.002299'
       Transfer-Encoding:
       - chunked
       Via:
@@ -113,7 +113,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
     http_version: 
-  recorded_at: Wed, 15 Jan 2020 15:31:24 GMT
+  recorded_at: Wed, 15 Jan 2020 16:01:08 GMT
 - request:
     method: get
     uri: http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&long=114.1693611
@@ -137,7 +137,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Wed, 15 Jan 2020 15:31:23 GMT
+      - Wed, 15 Jan 2020 16:01:07 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -159,9 +159,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b460a7c2-4ec0-4198-8a02-7d24765268e9
+      - 834aca4f-f064-4d9c-a113-3f4c9f90a4fe
       X-Runtime:
-      - '0.002677'
+      - '0.002970'
       Transfer-Encoding:
       - chunked
       Via:
@@ -170,7 +170,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
     http_version: 
-  recorded_at: Wed, 15 Jan 2020 15:31:24 GMT
+  recorded_at: Wed, 15 Jan 2020 16:01:08 GMT
 - request:
     method: get
     uri: http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&long=114.1693611
@@ -194,7 +194,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Wed, 15 Jan 2020 15:31:24 GMT
+      - Wed, 15 Jan 2020 16:01:08 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -216,9 +216,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 431820a1-7b03-42c7-96a1-11d369f0bc4a
+      - 628dd60a-ad69-4e9d-80d9-f0937422256c
       X-Runtime:
-      - '0.003175'
+      - '0.003313'
       Transfer-Encoding:
       - chunked
       Via:
@@ -227,7 +227,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
     http_version: 
-  recorded_at: Wed, 15 Jan 2020 15:31:24 GMT
+  recorded_at: Wed, 15 Jan 2020 16:01:08 GMT
 - request:
     method: get
     uri: http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&long=114.1693611
@@ -251,7 +251,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Wed, 15 Jan 2020 15:31:24 GMT
+      - Wed, 15 Jan 2020 16:01:08 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -273,9 +273,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 460aae80-9068-43af-81b6-f37bdc090ff4
+      - c5e7eab5-4ade-49f1-94c6-8afba1f0b689
       X-Runtime:
-      - '0.003287'
+      - '0.002397'
       Transfer-Encoding:
       - chunked
       Via:
@@ -284,7 +284,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
     http_version: 
-  recorded_at: Wed, 15 Jan 2020 15:31:24 GMT
+  recorded_at: Wed, 15 Jan 2020 16:01:08 GMT
 - request:
     method: get
     uri: http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&long=114.1693611
@@ -308,7 +308,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Wed, 15 Jan 2020 15:31:24 GMT
+      - Wed, 15 Jan 2020 16:01:08 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -330,9 +330,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e779ad28-b2b2-4b64-b4ea-566b6c49b72b
+      - 40dca8eb-364c-433f-887b-a213da0ad0c7
       X-Runtime:
-      - '0.002709'
+      - '0.003178'
       Transfer-Encoding:
       - chunked
       Via:
@@ -341,5 +341,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
     http_version: 
-  recorded_at: Wed, 15 Jan 2020 15:31:24 GMT
+  recorded_at: Wed, 15 Jan 2020 16:01:09 GMT
 recorded_with: VCR 5.0.0
