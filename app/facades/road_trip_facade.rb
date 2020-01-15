@@ -7,15 +7,10 @@ class RoadTripFacade
 
   def make_road_trip
     all_directions = get_all_direction_info(origin, destination)
-
     drive_time_info = get_travel_time_info(all_directions)
-
     arrival_time = get_arrival_time_in_seconds(all_directions, drive_time_info.travel_time_seconds)
-
     hourly_arrival_forecast = get_arrival_forecast(all_directions)
-
     temp_and_summary_on_arrival = get_current_weather_on_arrival_info(hourly_arrival_forecast, arrival_time)
-
     Trip.new(temp_and_summary_on_arrival, drive_time_info.travel_time_string, origin, destination)
   end
 
