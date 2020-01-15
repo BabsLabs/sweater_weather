@@ -12,7 +12,6 @@ describe 'Forecast Endpoint' do
 
       parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-# binding.pry
       expect(parsed_response).to have_key :data
       expect(parsed_response[:data]).to have_key :id
       expect(parsed_response[:data]).to have_key :type
@@ -43,5 +42,14 @@ describe 'Forecast Endpoint' do
       expect(parsed_response[:data][:attributes][:five_day_forecast][:five_day_weather][0]).to have_key :precipProbability
       expect(parsed_response[:data][:attributes][:five_day_forecast][:five_day_weather].count).to eq(5)
     end
+  end
+
+  it "shows and error if an incorrect location was given / location cannot be found", :vcr do
+    search_location = 'lkdjfkladjf,dfadslfjasd'
+
+    get "/api/v1/forecast?location=#{search_location}"
+
+    expect(response).to_not be_successful
+    expect(response.body).to eq("{\"message\":\"There was an error with your search location\"}")
   end
 end
