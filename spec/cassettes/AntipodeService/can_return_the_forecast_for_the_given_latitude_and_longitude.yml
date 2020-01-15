@@ -1,0 +1,345 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&long=114.1693611
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<ANTIPODE_API_KEY>"
+      User-Agent:
+      - Faraday v1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 15 Jan 2020 16:01:07 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"44fbfaaa09d0c593056cbd5360c77c9c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b404064a-8b2b-4cfc-9d3c-b82659463020
+      X-Runtime:
+      - '0.002589'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
+    http_version: 
+  recorded_at: Wed, 15 Jan 2020 16:01:08 GMT
+- request:
+    method: get
+    uri: http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&long=114.1693611
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<ANTIPODE_API_KEY>"
+      User-Agent:
+      - Faraday v1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 15 Jan 2020 16:01:08 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"44fbfaaa09d0c593056cbd5360c77c9c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e2d5dca5-b921-4dd8-ba04-ad0062c098aa
+      X-Runtime:
+      - '0.002299'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
+    http_version: 
+  recorded_at: Wed, 15 Jan 2020 16:01:08 GMT
+- request:
+    method: get
+    uri: http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&long=114.1693611
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<ANTIPODE_API_KEY>"
+      User-Agent:
+      - Faraday v1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 15 Jan 2020 16:01:07 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"44fbfaaa09d0c593056cbd5360c77c9c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 834aca4f-f064-4d9c-a113-3f4c9f90a4fe
+      X-Runtime:
+      - '0.002970'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
+    http_version: 
+  recorded_at: Wed, 15 Jan 2020 16:01:08 GMT
+- request:
+    method: get
+    uri: http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&long=114.1693611
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<ANTIPODE_API_KEY>"
+      User-Agent:
+      - Faraday v1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 15 Jan 2020 16:01:08 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"44fbfaaa09d0c593056cbd5360c77c9c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 628dd60a-ad69-4e9d-80d9-f0937422256c
+      X-Runtime:
+      - '0.003313'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
+    http_version: 
+  recorded_at: Wed, 15 Jan 2020 16:01:08 GMT
+- request:
+    method: get
+    uri: http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&long=114.1693611
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<ANTIPODE_API_KEY>"
+      User-Agent:
+      - Faraday v1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 15 Jan 2020 16:01:08 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"44fbfaaa09d0c593056cbd5360c77c9c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c5e7eab5-4ade-49f1-94c6-8afba1f0b689
+      X-Runtime:
+      - '0.002397'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
+    http_version: 
+  recorded_at: Wed, 15 Jan 2020 16:01:08 GMT
+- request:
+    method: get
+    uri: http://amypode.herokuapp.com/api/v1/antipodes?lat=22.3193039&long=114.1693611
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<ANTIPODE_API_KEY>"
+      User-Agent:
+      - Faraday v1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 15 Jan 2020 16:01:08 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"44fbfaaa09d0c593056cbd5360c77c9c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 40dca8eb-364c-433f-887b-a213da0ad0c7
+      X-Runtime:
+      - '0.003178'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"antipode","attributes":{"lat":-22.3193039,"long":-65.8306389}}}'
+    http_version: 
+  recorded_at: Wed, 15 Jan 2020 16:01:09 GMT
+recorded_with: VCR 5.0.0
