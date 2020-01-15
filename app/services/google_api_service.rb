@@ -14,7 +14,7 @@ class GoogleAPIService
         req.params['destination'] = destination
       end
 
-      parsed_response = JSON.parse(response.body, symbolize_names: true)
+      JSON.parse(response.body, symbolize_names: true)
     end
 
     def get_city_name(lat_and_long)
