@@ -6,12 +6,18 @@ class AntipodeFacade
     latitude_and_longitude_of_search_location = get_latitude_and_longitude_from_google(location)
     antipode_info = get_latitude_and_longitude_of_antipode(latitude_and_longitude_of_search_location)
     antipode_city_data = get_city_info(antipode_info)
-    antipode_name_info = antipode_city_data[:results][0][:address_components].map {|address_piece| address_piece[:long_name]}.flatten.join(' ')
+    antipode_name_info = get_antipode_name(antipode_city_data)
     weather_data = get_forecast_from_darksky(antipode_info)
-    antipode = Antipode.new(weather_data, antipode_name_info, location)
+    Antipode.new(weather_data, antipode_name_info, location)
   end
 
   private
+
+    def self.get_antipode_name(antipode_city_data)
+      antipode_city_data[:results][0][:address_components].map do |address_piece|
+        address_piece[:long_name]
+      end.flatten.join(' ')
+    end
 
     def self.get_latitude_and_longitude_from_google(location)
       google_service = GoogleAPIService.new
