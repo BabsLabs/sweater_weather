@@ -10,7 +10,7 @@ The purpose of this project was to build an API that could consume data from a n
 
 ## Focus Areas
 
-* Consuming a number of various APIs
+* Consuming a number of APIs to be returned as JSON
 * Building Authenticated API calls
 * Building features on Greenfield Code
 * Test driven development
@@ -20,7 +20,7 @@ The purpose of this project was to build an API that could consume data from a n
 ## APIs Used
 * [Google Maps API](https://developers.google.com/maps/documentation)
 * [Dark Sky Weather API](https://darksky.net/dev)
-* [Dark Sky Weather API](https://unsplash.com/developers)
+* [Unsplash API](https://unsplash.com/developers)
 
 ## Tech/Framework Used
 
