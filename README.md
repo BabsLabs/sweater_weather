@@ -60,7 +60,7 @@ Keep environment variables secure by using Figaro to generate an `application.ym
 ### Required Environment Variables
 Environment variables and required API keys/tokens (in Figaro format) :
 1. Google Geocode API key defined as `ENV['GOOGLE_GEOCODE_API_KEY']`
-1. Darky Sky API key defined as `ENV['DARK_SKY_API_KEY']`
+1. DarkSky API key defined as `ENV['DARK_SKY_API_KEY']`
 1. Unsplash API key defined as `ENV['UNSPLASH_API_KEY']`
 1. Antipode API key defined as `ENV['ANTIPODE_API_KEY']`
 
